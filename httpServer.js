@@ -39,7 +39,8 @@ const server = http.createServer((req, res) => {
         <div>${data.carstypes[i].description}</div><div>${data.carstypes[i].price}</div>`);
       } 
   }
-
+  res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
+        res.end(`<h1>404</h1>`);
 });
 
 const PORT = process.env.PORT || 3000;
